@@ -25,7 +25,7 @@ A full-stack music streaming platform inspired by Spotify — enhanced with real
 
 | Frontend | Backend | Auth | Storage | Real-time |
 |----------|---------|------|---------|------------|
-| React, TypeScript, Tailwind CSS | Node.js, Express, MongoDB | Clerk | Cloudinary | Zustand / Clerk Presence API |
+| React, TypeScript, Tailwind CSS, Shadcn | Node.js, Express, MongoDB | Clerk | Cloudinary | Zustand / Clerk Presence API |
 
 ---
 
