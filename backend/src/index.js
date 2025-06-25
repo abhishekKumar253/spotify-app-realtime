@@ -11,6 +11,8 @@ import albumRoutes from './routes/album.route.js';
 import statRoutes from './routes/stat.route.js';
 import fileUpload from 'express-fileupload';
 import path from 'path';
+import { createServer } from 'http';
+import { initializeSocket } from './lib/socket.js';
 
 dotenv.config();
 
@@ -18,10 +20,13 @@ const app = express();
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 
+const httpServer = createServer(app);
+initializeSocket(httpServer);
+
 app.use(
   cors({
     origin: 'http://localhost:3000',
-    credentials: true,
+    credentials: true
   })
 );
 app.use(express.json());
@@ -54,7 +59,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log('Server is running on port 5000');
   connectDB();
 });

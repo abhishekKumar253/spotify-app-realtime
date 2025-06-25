@@ -1,7 +1,8 @@
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { userChatStore } from '@/stores/useChatStore';
+
 import { useUser } from '@clerk/clerk-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar';
 import { HeadphonesIcon, Music, Users } from 'lucide-react';
 import { useEffect } from 'react';
 
@@ -21,6 +22,7 @@ const FriendsActivity = () => {
           <h2 className="font-semibold">What they're listening to</h2>
         </div>
       </div>
+
       {!user && <LoginPrompt />}
 
       <ScrollArea className="flex-1">
